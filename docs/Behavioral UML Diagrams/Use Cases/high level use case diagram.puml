@@ -1,0 +1,20 @@
+@startuml
+
+(Place a bid) as (Bid)
+(Review stock analytic data) as (Research)
+
+Investor --> (Bid)
+Settlement --> (Transact Purchase)
+(Transact Purchase) <|-- (Bid)
+
+Analyst --> (Research)
+
+(Select stock) --> (Research) : include
+(Select stock) --> (Bid) : include
+(Bid) <-- (Specify quantity) : include
+(Bid) <-- (Specify transaction datetime) : include
+(Bid) <-- (Specify price) : include
+(Research) <-- (Select date range) : include
+(Research) <|-- (Compare stocks) : extends
+
+@enduml
