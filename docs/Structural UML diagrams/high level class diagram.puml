@@ -1,0 +1,17 @@
+@startuml
+
+class Stock {
+  - symbol: String
+  - amountTraded: Long
+}
+
+class Bid {
+  - stock : Stock
+  - quantity: Integer
+  - pricePerShare: BigDecimal
+  - requestTimeStamp : TimeStamp
+}
+
+Bid --> Stock : has a
+
+@enduml
